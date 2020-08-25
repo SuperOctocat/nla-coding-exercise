@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <title>NLA Coding Exercise</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="#" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!--    <script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
+    <script src="https://unpkg.com/vue@2.1.10/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+</head>
+<body>
+<div id="pageContainer">
+    <div id="app">
+        <header-component></header-component>
+        <div class="col-sm-2 sidenav"></div>
+        <div id="body">
+            <div class="container-fluid text-center">
+                <h1>{{ message }}</h1>
+                <p>{{ instructions }}</p>
+                <p>
+                    <button @click.prevent="showUsersTable" class="btn btn-primary my-3">Friends</button>
+                    <button @click.prevent="showBooksTable" class="btn btn-primary my-3">Books</button>
+                </p>
+            </div>
+            <div v-if="hasBooks" class="container-fluid text-center">
+                <books-table-component v-bind:books="books"></books-table-component>
+            </div>
+            <div v-if="hasUsers" class="container-fluid text-center">
+                <users-table-component v-bind:users="users"></users-table-component>
+            </div>
+        </div>
+        <div class="col-sm-2 sidenav"></div>
+        <footer-component></footer-component>
+    </div>
+    <script type="text/javascript" src="webjars/jquery/2.2.4/jquery.min.js"></script>
+    <script type="application/javascript" src="js/main.js"></script>
+    <script type="application/javascript" src="js/index.js"></script>
+</div>
+</body>
+</html>

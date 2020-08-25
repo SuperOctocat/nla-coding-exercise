@@ -1,0 +1,13 @@
+server:
+  context-path: /nla-coding-exercise
+
+spring:
+  main:
+    banner-mode: "off"
+  datasource:
+    platform: h2
+
+logging:
+  level:
+    org:
+      springframework: ERROR
